@@ -1,0 +1,49 @@
+.header {
+  background-color: $main-color;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: $secondary-font-color;
+}
+
+.nav-item {
+  display: inline-block;
+  a {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    font: 700 13px $secondary-font-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 1px;
+      width: 0;
+      background: transparent;
+    }
+    &:hover:before {
+      background: $secondary-font-color;
+      width: 100%;
+    }
+  }
+}
+
+.social {
+  text-decoration: none;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: $secondary-font-color;
+}
+
+.social:hover {
+  text-decoration: line-through;
+}
