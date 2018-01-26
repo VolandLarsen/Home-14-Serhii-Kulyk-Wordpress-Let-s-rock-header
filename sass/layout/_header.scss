@@ -2,36 +2,40 @@
   background-color: $main-color;
 }
 
-.nav-link {
+div.custom-menu-class ul {
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   color: $secondary-font-color;
 }
 
-.nav-item {
-  display: inline-block;
-  a {
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    font: 700 13px $secondary-font-color;
-    text-transform: uppercase;
-    text-decoration: none;
-    outline: none;
-    &:before {
-      content: '';
+div.custom-menu-class {
+  li {
+    display: inline-block;
+    a {
+      position: relative;
       display: block;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      height: 1px;
-      width: 0;
-      background: transparent;
-    }
-    &:hover:before {
-      background: $secondary-font-color;
-      width: 100%;
+      padding: 0 10px;
+      font-weight: 700 ;
+      font-size: 13px;
+      color: $secondary-font-color;
+      text-transform: uppercase;
+      text-decoration: none;
+      outline: none;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 1px;
+        width: 0;
+        background: transparent;
+      }
+      &:hover:before {
+        background: $secondary-font-color;
+        width: 100%;
+      }
     }
   }
 }
