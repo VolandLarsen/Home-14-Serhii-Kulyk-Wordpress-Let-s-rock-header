@@ -76,6 +76,10 @@
                 the_custom_logo();
                 ?>
 
+                <?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu-social',
+                    'container_class' => 'custom-menu-class-social' ) );
+                ?>
+
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 

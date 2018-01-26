@@ -40,7 +40,7 @@ div.custom-menu-class {
   }
 }
 
-.social {
+div.custom-menu-class-social a {
   text-decoration: none;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
@@ -48,6 +48,24 @@ div.custom-menu-class {
   color: $secondary-font-color;
 }
 
-.social:hover {
+div.custom-menu-class-social li:hover {
   text-decoration: line-through;
+  color: $secondary-font-color;
+}
+
+.menu li a:before {
+  font-family: FontAwesome;
+  padding-right: 7px;
+}
+
+#menu-item-55 a:before {
+  content: "\f09a";
+}
+
+#menu-item-56 a:before {
+  content: "\f099";
+}
+
+#menu-item-57 a:before {
+  content: "\f0d5";
 }

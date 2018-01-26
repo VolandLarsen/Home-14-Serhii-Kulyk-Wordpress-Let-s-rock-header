@@ -21,7 +21,7 @@
 
 //header button and founder
 
-.purshcase-button, .learn-more-button {
+#menu-item-63 a {
   text-decoration: none;
   font-family: 'Droid Sans', sans-serif;
   font-size: 15px;
@@ -33,7 +33,19 @@
   display: inline-block;
 }
 
-.purshcase-button:hover {
+.learn-more-button {
+  text-decoration: none;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: $main-color;
+  border-radius: 25px;
+  background-color: $secondary-font-color;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+#menu-item-63 a:hover {
   color: $main-font-color;
   transition: 0.5s;
   cursor: pointer;

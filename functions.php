@@ -165,7 +165,16 @@ function add_my_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'add_my_stylesheet' );
 
 function wpb_custom_new_menu() {
-    register_nav_menu('my-custom-menu',__( 'My Custom Menu' ));
+    register_nav_menus(
+        array(
+            'my-custom-menu' => __( 'My Custom Menu' ),
+            'my-custom-menu-social' => __( 'My Custom Menu-social' )
+        )
+    );
 }
 add_action( 'init', 'wpb_custom_new_menu' );
 
+add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
+function enqueue_font_awesome() {
+    wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+}
