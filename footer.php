@@ -23,10 +23,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="flexslider/jquery.flexslider.js"></script>
-<script src="/slick/slick.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+
 <script src="js/main.js"></script>
 </body>
 </html>

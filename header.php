@@ -22,6 +22,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<script src="flexslider/jquery.flexslider.js"></script>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'lets-rock'); ?></a>
     <body <?php body_class(); ?>>
@@ -49,13 +50,20 @@
                         <div class="promo">
                             <div class="main-heading"
                                  style='background: url("<?php echo get_header_image(); ?>") center center/cover ;'>
-                                <h1 class="main-header"><?php echo get_theme_mod('slide1_header') ?> <span
-                                            class="sub-header"><?php echo get_theme_mod('slide1_subheader') ?></span>
+                                <h1 class="main-header">
+                                    <?php echo get_theme_mod('slide1_header') ?>
+                                    <span class="sub-header">
+                                        <?php echo get_theme_mod('slide1_subheader') ?>
+                                    </span>
                                 </h1>
-                                <a class="main-button"
-                                   href="<?php echo get_theme_mod('slide1_button_url') ?>"><?php echo get_theme_mod('slide1_button_content') ?></a>
+                                <a class="main-button" href="<?php echo get_theme_mod('slide1_button_url') ?>">
+                                    <?php echo get_theme_mod('slide1_button_content') ?>
+                                </a>
                             </div>
                         </div>
+                    </li>
+                    <li>
+
                     </li>
                 </ul>
             </div>
