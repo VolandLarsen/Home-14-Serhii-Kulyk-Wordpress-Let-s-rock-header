@@ -187,20 +187,14 @@ function letsrock_customize_register( $wp_customize ) {
         'transport' => 'refresh',
     ) );
 
-    $wp_customize->add_setting( 'img_slide' , array(
-        'default'   => __('image url', 'letsrock'),
-        'transport' => 'refresh',
-    ) );
+
 
     $wp_customize->add_section( 'copyright_section' , array(
         'title'      => __( 'Copyright settings', 'lets_rock' ),
         'priority'   => 30,
     ) );
 
-    $wp_customize->add_section( 'slide_section' , array(
-        'title'      => __( 'Img slide', 'letsrock' ),
-        'priority'   => 31,
-    ) );
+
 
     $wp_customize->add_control(
         'copyright', array(
@@ -210,13 +204,18 @@ function letsrock_customize_register( $wp_customize ) {
         'type'       => 'textarea',
     ));
 
-    $wp_customize->add_control(
-        'img_slide', array(
-        'label'      => __( 'Insert image url', 'letsrock' ),
-        'section'    => 'slide_section',
-        'settings'   => 'img_slide',
-        'type'       => 'url',
-    ));
+
+
+
+
+
+
+    $wp_customize->add_section( 'slide1_button_section' , array(
+        'title'      => __( 'Button url for slide 1', 'letsrock' ),
+        'priority'   => 33,
+    ) );
+
+
 
 
 
@@ -247,6 +246,16 @@ function letsrock_customize_register( $wp_customize ) {
         'transport' => 'refresh',
     ) );
 
+    $wp_customize->add_setting( 'slide1_button_url' , array(
+        'default'   => __('Button url', 'letsrock'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'slide1_button_content' , array(
+        'default'   => __('Button content', 'letsrock'),
+        'transport' => 'refresh',
+    ) );
+
     $wp_customize->add_section( 's1header_section' , array(
         'title'      => __( 'Slide one header', 'letsrock' ),
         'priority'   => 32,
@@ -268,7 +277,21 @@ function letsrock_customize_register( $wp_customize ) {
         'type'       => 'text',
     ));
 
+    $wp_customize->add_control(
+        'slide1_button_url', array(
+        'label'      => __( 'Insert url for slide 1 button', 'letsrock' ),
+        'section'    => 's1header_section',
+        'settings'   => 'slide1_button_url',
+        'type'       => 'url',
+    ));
 
+    $wp_customize->add_control(
+        'slide1_button_content', array(
+        'label'      => __( 'Insert text for slide 1 button', 'letsrock' ),
+        'section'    => 's1header_section',
+        'settings'   => 'slide1_button_content',
+        'type'       => 'text',
+    ));
 
 
 

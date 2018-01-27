@@ -52,7 +52,7 @@
                         <div class="promo">
                             <div class="main-heading" style='background: url("<?php echo get_header_image(); ?>") center center/cover ;'>
                                     <h1 class="main-header"><?php echo get_theme_mod('slide1_header') ?> <span class="sub-header"><?php echo get_theme_mod('slide1_subheader') ?></span></h1>
-                                    <a class="main-button" href="#">DISCOVER MORE</a>
+                                    <a class="main-button" href="<?php echo get_theme_mod('slide1_button_url') ?>"><?php echo get_theme_mod('slide1_button_content') ?></a>
                             </div>
                         </div>
                     </li>
