@@ -8,7 +8,6 @@
  *
  * @package Let\'s_Rock
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -22,57 +21,43 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'lets-rock'); ?></a>
-
     <body <?php body_class(); ?>>
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'lets-rock'); ?></a>
         <header id="masthead" class="site-header">
-        <div class="header">
-            <nav id="site-navigation" class="main-navigation header">
-                <button class="menu-toggle" aria-controls="primary-menu"
-                        aria-expanded="false"><?php esc_html_e('Primary Menu', 'lets-rock'); ?></button>
-                <?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu',
-                    'container_class' => 'custom-menu-class' ) );
-                ?>
-                 <?php
-                the_custom_logo();
-                ?>
-                <?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu-social',
-                    'container_class' => 'custom-menu-class-social' ) );
-                ?>
-            </nav><!-- #site-navigation -->
-        </div>
+            <div class="header">
+                <nav id="site-navigation" class="main-navigation header">
+                    <button class="menu-toggle" aria-controls="primary-menu"
+                            aria-expanded="false"><?php esc_html_e('Primary Menu', 'lets-rock'); ?></button>
+                    <?php wp_nav_menu(array('theme_location' => 'my-custom-menu',
+                        'container_class' => 'custom-menu-class'));
+                    ?>
+                    <?php
+                    the_custom_logo();
+                    ?>
+                    <?php wp_nav_menu(array('theme_location' => 'my-custom-menu-social',
+                        'container_class' => 'custom-menu-class-social'));
+                    ?>
+                </nav><!-- #site-navigation -->
+            </div>
             <div class="flexslider">
                 <ul class="slides">
                     <li>
                         <div class="promo">
-                            <div class="main-heading" style='background: url("<?php echo get_header_image(); ?>") center center/cover ;'>
-                                    <h1 class="main-header"><?php echo get_theme_mod('slide1_header') ?> <span class="sub-header"><?php echo get_theme_mod('slide1_subheader') ?></span></h1>
-                                    <a class="main-button" href="<?php echo get_theme_mod('slide1_button_url') ?>"><?php echo get_theme_mod('slide1_button_content') ?></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="promo-secondslide">
-                            <div class="main-heading">
-
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="promo-thirdslide">
-                            <div class="main-heading">
-
+                            <div class="main-heading"
+                                 style='background: url("<?php echo get_header_image(); ?>") center center/cover ;'>
+                                <h1 class="main-header"><?php echo get_theme_mod('slide1_header') ?> <span
+                                            class="sub-header"><?php echo get_theme_mod('slide1_subheader') ?></span>
+                                </h1>
+                                <a class="main-button"
+                                   href="<?php echo get_theme_mod('slide1_button_url') ?>"><?php echo get_theme_mod('slide1_button_content') ?></a>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-
         </header><!-- #masthead -->
-
         <div id="content" class="site-content">

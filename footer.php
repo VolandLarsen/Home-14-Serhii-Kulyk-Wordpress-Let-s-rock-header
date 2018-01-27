@@ -8,21 +8,18 @@
  *
  * @package Let\'s_Rock
  */
-
 ?>
-
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-        <div class="footer">
-        <?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu-footer',
-            'container_class' => 'custom-menu-class-footer' ) );
+</div><!-- #content -->
+<footer id="colophon" class="site-footer">
+    <div class="footer">
+        <?php wp_nav_menu(array('theme_location' => 'my-custom-menu-footer',
+            'container_class' => 'custom-menu-class-footer'));
         ?>
-        </div>
-        <div class="copyright">
+    </div>
+    <div class="copyright">
         <?php echo get_theme_mod('footer_copy') ?>
-        </div>
-	</footer><!-- #colophon -->
+    </div>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
