@@ -168,7 +168,8 @@ function wpb_custom_new_menu() {
     register_nav_menus(
         array(
             'my-custom-menu' => __( 'My Custom Menu' ),
-            'my-custom-menu-social' => __( 'My Custom Menu-social' )
+            'my-custom-menu-social' => __( 'My Custom Menu-social' ),
+            'my-custom-menu-footer' => __( 'My Custom Menu-footer' )
         )
     );
 }
@@ -178,3 +179,48 @@ add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
 function enqueue_font_awesome() {
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 }
+
+function letsrock_customize_register( $wp_customize ) {
+    //All our sections, settings, and controls will be added here
+    $wp_customize->add_setting( 'footer_copy' , array(
+        'default'   => __('Copyright ', 'lets_rock'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'img_slide' , array(
+        'default'   => __('image url', 'letsrock'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_section( 'copyright_section' , array(
+        'title'      => __( 'Copyright settings', 'lets_rock' ),
+        'priority'   => 30,
+    ) );
+
+    $wp_customize->add_section( 'slide_section' , array(
+        'title'      => __( 'Img slide', 'letsrock' ),
+        'priority'   => 31,
+    ) );
+
+    $wp_customize->add_control(
+        'copyright', array(
+        'label'      => __( 'Copyright info in footer', 'lets_rock' ),
+        'section'    => 'copyright_section',
+        'settings'   => 'footer_copy',
+        'type'       => 'textarea',
+    ));
+
+    $wp_customize->add_control(
+        'img_slide', array(
+        'label'      => __( 'Insert image url', 'letsrock' ),
+        'section'    => 'slide_section',
+        'settings'   => 'img_slide',
+        'type'       => 'url',
+    ));
+
+}
+add_action( 'customize_register', 'letsrock_customize_register' );
+
+
+
+

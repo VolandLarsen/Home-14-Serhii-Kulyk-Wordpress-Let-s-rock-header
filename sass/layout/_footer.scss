@@ -1,23 +1,28 @@
 .footer {
-  border-top: 2px solid #d2d2d2;
+     border-top: 2px solid #d2d2d2;
 }
 
-.foot-link {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  color: $main-font-color;
+#menu-footer-navigation a {
+     text-decoration: none;
+     font-size: 16px;
+     font-weight: bold;
+     color: $main-font-color;
 }
 
-.foot-link:hover {
-  text-decoration: line-through;
+#menu-footer-navigation a:hover {
+     text-decoration: line-through;
 }
 
 .copyright {
-  color: $main-font-color;
+     color: $main-font-color;
 }
 
-.cantus {
-  font-size: 30px;
-  color: $main-color;
+a.cantus {
+     text-decoration: none;
+     font-size: 30px;
+     color: $main-color;
+}
+
+.cantus:hover {
+     opacity: 0.5;
 }
