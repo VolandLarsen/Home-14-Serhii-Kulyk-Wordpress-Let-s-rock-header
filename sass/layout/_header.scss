@@ -79,3 +79,27 @@ div.custom-menu-class-social li:hover {
           margin: 0;
      }
 }
+
+// slides
+
+.main-header {
+     font-size: 80px;
+     font-weight: bold;
+     color: $main-color;
+     width: 500px;
+     line-height: 1;
+}
+
+.sub-header {
+     color: $main-font-color;
+     font-size: 60px;
+}
+
+.promo:after {
+     content: ' ';
+     background-color: $main-color;
+     height: 3px;
+     width: 70%;
+     display: block;
+     position: absolute;
+}

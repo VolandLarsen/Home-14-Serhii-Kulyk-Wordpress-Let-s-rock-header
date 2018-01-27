@@ -50,8 +50,9 @@
                 <ul class="slides">
                     <li>
                         <div class="promo">
-                            <div class="main-heading" style=' padding: 100px; background: url("<?php echo get_theme_mod('img_slide') ?>") center center/cover ;'>
-                            <img src="<?php echo the_post_thumbnail_url(); ?>">
+                            <div class="main-heading" style='background: url("<?php echo get_header_image(); ?>") center center/cover ;'>
+                                    <h1 class="main-header"><?php echo get_theme_mod('slide1_header') ?> <span class="sub-header"><?php echo get_theme_mod('slide1_subheader') ?></span></h1>
+                                    <a class="main-button" href="#">DISCOVER MORE</a>
                             </div>
                         </div>
                     </li>

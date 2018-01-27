@@ -218,6 +218,69 @@ function letsrock_customize_register( $wp_customize ) {
         'type'       => 'url',
     ));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $wp_customize->add_setting( 'slide1_header' , array(
+        'default'   => __('HEADER', 'lets_rock'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'slide1_subheader' , array(
+        'default'   => __('subheader', 'letsrock'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_section( 's1header_section' , array(
+        'title'      => __( 'Slide one header', 'letsrock' ),
+        'priority'   => 32,
+    ) );
+
+    $wp_customize->add_control(
+        'slide1_header', array(
+        'label'      => __( 'Edit slide one header', 'lets_rock' ),
+        'section'    => 's1header_section',
+        'settings'   => 'slide1_header',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_control(
+        'slide1_subheader', array(
+        'label'      => __( 'Edit slide one subheader', 'letsrock' ),
+        'section'    => 's1header_section',
+        'settings'   => 'slide1_subheader',
+        'type'       => 'text',
+    ));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 add_action( 'customize_register', 'letsrock_customize_register' );
 
