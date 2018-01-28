@@ -265,13 +265,12 @@ function letsrock_customize_register($wp_customize)
 
 add_action('customize_register', 'letsrock_customize_register');
 
+// Try to add my jQuery script for slider and popup
+
 function my_scripts_method() {
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js');
-    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js');
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-
-
-
