@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-
+<?php get_theme_mod('drop-page') ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main"
             <div class="founders">
@@ -29,7 +29,7 @@ get_header(); ?>
                                 <?php echo get_theme_mod('founders_content') ?>
                             </p>
                             <div class="learn-more-container">
-                                <a href="<?php echo get_theme_mod('founders_button_url') ?>" class="learn-more-button">
+                                <a class="learn-more-button" id="go">
                                     <?php echo get_theme_mod('founders_button_content') ?>
                                 </a>
                             </div>
@@ -63,6 +63,14 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+        <div id="modal_form"><!-- Popup window-->
+            <span id="modal_close">X</span> <!-- Closing button -->
+            <div class="heading">
+                <h2 class="head"><?php echo get_theme_mod('popup_header') ?> <!-- <span class="subhead">FOUNDERS</span></h2> -->
+                <p class="popup-text"><?php echo get_theme_mod('popup_info') ?></p>
+            </div>
+        </div>
+        <div id="overlay"></div><!-- background overlay -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

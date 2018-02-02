@@ -2,6 +2,16 @@
      background-color: $main-color;
 }
 
+.head-slider{
+     position: relative;
+}
+
+.promo {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+}
+
 div.custom-menu-class ul {
      text-decoration: none;
      font-size: 16px;
@@ -58,25 +68,21 @@ div.custom-menu-class-social li:hover {
      padding-right: 7px;
 }
 
-#menu-item-55 a:before {
-     content: "\f09a";
+#menu-social li:first-child{
+     a:before {
+          content: "\f09a";
+     }
 }
 
-#menu-item-56 a:before {
-     content: "\f099";
+#menu-social li:nth-child(2){
+     a:before {
+          content: "\f099";
+     }
 }
 
-#menu-item-57 a:before {
-     content: "\f0d5";
-}
-
-.slides {
-     padding: 0;
-     margin: 0;
-     li {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
+#menu-social li:nth-child(3){
+     a:before {
+          content: "\f0d5";
      }
 }
 
@@ -102,4 +108,12 @@ div.custom-menu-class-social li:hover {
      width: 70%;
      display: block;
      position: absolute;
+}
+
+.promo {
+     border-bottom: 3px solid #d2d2d2;
+}
+
+.main-heading {
+     border-bottom: 3px;
 }

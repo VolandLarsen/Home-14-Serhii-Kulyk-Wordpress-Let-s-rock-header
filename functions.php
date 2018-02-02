@@ -136,21 +136,11 @@ function lets_rock_scripts()
 
     // my scripts
 
-    wp_deregister_script( 'jquery' );
-
-    wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js');
-
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . 'jquery2.2.4.js');
-
-    //wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/flexslider/jquery.flexslider.js');
-
     wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css');
 
-    //wp_enqueue_style('flexslider-css', get_template_directory_uri() . '/flexslider/flexslider.css');
+    wp_enqueue_script("jquery");
 
-
-
-
+    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js');
 }
 
 add_action('wp_enqueue_scripts', 'lets_rock_scripts');
@@ -412,13 +402,6 @@ function letsrock_customize_register($wp_customize)
 
         )
     ));
-
-
-
-
-
-
-
     $wp_customize->add_section('download_section', array(
         'title' => __('Download info', 'letsrock'),
     ));
@@ -434,8 +417,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'download_head',
         'type' => 'text',
     ));
-
-
     $wp_customize->add_setting('download_subhead', array(
         'default' => __('Subheader', 'lets_rock'),
         'transport' => 'refresh',
@@ -492,9 +473,67 @@ function letsrock_customize_register($wp_customize)
                 'settings'   => 'back_image',
             )
         ));
+    $wp_customize->add_section('', array(
+        'title' => __('Dropdown pages', 'letsrock'),
+    ));
 
+    $wp_customize->add_setting('dop_page', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'drop_page', array(
+        'label' => __('Edit download header', 'lets_rock'),
+        'section' => 'dropdown_section',
+        'settings' => 'drop_page',
+        'type' => 'dropdown-pages',
+    ));
+
+
+    $wp_customize->add_section( 'dropdown_section' , array(
+        'title'      => __( 'Dropdown pages', 'lets_rock' ),
+    ) );
+        $wp_customize->add_setting( 'drop-page', array(
+            'default'           => '',
+            'sanitize_callback' => 'absint'
+        ) );
+
+        $wp_customize->add_control( 'drop-page', array(
+            'label'    => __( 'Select Page', 'lets_rock' ),
+            'section'  => 'dropdown_section',
+            'type'     => 'dropdown-pages'
+        ) );
+
+    $wp_customize->add_section('popup_section', array(
+        'title' => __('Popup editor', 'letsrock'),
+    ));
+
+    $wp_customize->add_setting('popup_header', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'popup_header', array(
+        'label' => __('Edit popup header', 'lets_rock'),
+        'section' => 'popup_section',
+        'settings' => 'popup_header',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('popup_info', array(
+        'default' => __('Head', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'popup_info', array(
+        'label' => __('Edit popup info', 'lets_rock'),
+        'section' => 'popup_section',
+        'settings' => 'popup_info',
+        'type' => 'textarea',
+    ));
 }
 
 add_action('customize_register', 'letsrock_customize_register');
 
 // Try to add my jQuery script for slider and popup
+
