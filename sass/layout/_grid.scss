@@ -239,10 +239,11 @@ div.custom-menu-class-social li {
      margin: 10px auto;
 }
 
-.app-list {
+ul.app-list {
      display: flex;
      justify-content: center;
      padding: 0;
+     margin: 0 auto;
 }
 
 .app-item {

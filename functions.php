@@ -411,8 +411,88 @@ function letsrock_customize_register($wp_customize)
             'settings'   => 'founders_image',
 
         )
-    )
-);
+    ));
+
+
+
+
+
+
+
+    $wp_customize->add_section('download_section', array(
+        'title' => __('Download info', 'letsrock'),
+    ));
+
+    $wp_customize->add_setting('download_head', array(
+        'default' => __('Head', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'download_head', array(
+        'label' => __('Edit download header', 'lets_rock'),
+        'section' => 'download_section',
+        'settings' => 'download_head',
+        'type' => 'text',
+    ));
+
+
+    $wp_customize->add_setting('download_subhead', array(
+        'default' => __('Subheader', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'download_subhead', array(
+        'label' => __('Edit download subheader', 'lets_rock'),
+        'section' => 'download_section',
+        'settings' => 'download_subhead',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('apple_image', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'apple_image',
+            array(
+                'label'      => __( 'Upload apple image', 'lets_rock' ),
+                'section'    => 'download_section',
+                'settings'   => 'apple_image',
+
+            )
+        ));
+    $wp_customize->add_setting('play_image', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'play_image',
+            array(
+                'label'      => __( 'Upload play store image', 'lets_rock' ),
+                'section'    => 'download_section',
+                'settings'   => 'play_image',
+            )
+        ));
+
+    $wp_customize->add_setting('back_image', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'back_image',
+            array(
+                'label'      => __( 'Upload background image', 'lets_rock' ),
+                'section'    => 'download_section',
+                'settings'   => 'back_image',
+            )
+        ));
+
 }
 
 add_action('customize_register', 'letsrock_customize_register');

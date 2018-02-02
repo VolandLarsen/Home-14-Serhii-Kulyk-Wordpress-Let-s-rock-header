@@ -39,6 +39,30 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+        <div class="download">
+            <div class="container">
+                <div class="download-content" style="background: url('<?php echo get_theme_mod('back_image') ?>');">
+                    <div class="download-header">
+                        <h2 class="download-head"><?php echo get_theme_mod('download_head') ?></h2>
+                        <p class="download-subhead"><?php echo get_theme_mod('download_subhead') ?></p>
+                    </div>
+                    <div class="app-stores">
+                        <ul class="app-list">
+                            <li class="app-item">
+                                <a href="#" class="apple">
+                                    <img src="<?php echo get_theme_mod('apple_image') ?>" alt="Apple Store">
+                                </a>
+                            </li>
+                            <li class="app-item">
+                                <a href="#" class="android">
+                                    <img src="<?php echo get_theme_mod('play_image') ?>" alt="Play Store">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php
