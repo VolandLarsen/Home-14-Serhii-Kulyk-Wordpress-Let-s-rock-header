@@ -129,9 +129,28 @@ function lets_rock_scripts()
 
     wp_enqueue_script('lets-rock-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
+
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    // my scripts
+
+    wp_deregister_script( 'jquery' );
+
+    wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js');
+
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . 'jquery2.2.4.js');
+
+    //wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/flexslider/jquery.flexslider.js');
+
+    wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css');
+
+    //wp_enqueue_style('flexslider-css', get_template_directory_uri() . '/flexslider/flexslider.css');
+
+
+
+
 }
 
 add_action('wp_enqueue_scripts', 'lets_rock_scripts');
@@ -163,14 +182,7 @@ if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
 
-function add_my_stylesheet()
-{
-    $myStyleFile = get_template_directory_uri() . '/css/main.css';
-    wp_register_style('myStyleSheets', $myStyleFile);
-    wp_enqueue_style('myStyleSheets');
-}
-
-add_action('wp_enqueue_scripts', 'add_my_stylesheet');
+//my functions
 
 function wpb_custom_new_menu()
 {
@@ -208,6 +220,42 @@ function letsrock_customize_register($wp_customize)
         'section' => 'copyright_section',
         'settings' => 'footer_copy',
         'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('footer_copy_rights', array(
+        'default' => __('Copyright', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        'footer_copy_rights', array(
+        'label' => __('Copyright', 'lets_rock'),
+        'section' => 'copyright_section',
+        'settings' => 'footer_copy_rights',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('footer_link_content', array(
+        'default' => __('Link content', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'footer_link_content', array(
+        'label' => __('Edit link content', 'lets_rock'),
+        'section' => 'copyright_section',
+        'settings' => 'footer_link_content',
+        'type' => 'text',
+    ));
+    $wp_customize->add_setting('footer_link_url', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'footer_link_url', array(
+        'label' => __('Edit link url', 'lets_rock'),
+        'section' => 'copyright_section',
+        'settings' => 'footer_link_url',
+        'type' => 'url',
     ));
     $wp_customize->add_section('slide1_button_section', array(
         'title' => __('Button url for slide 1', 'letsrock'),
@@ -261,16 +309,112 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'slide1_button_content',
         'type' => 'text',
     ));
+    $wp_customize->add_section('founders_section', array(
+        'title' => __('Founders info', 'letsrock'),
+    ));
+    $wp_customize->add_setting('founders_header', array(
+        'default' => __('HEADER', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_header', array(
+        'label' => __('Edit founders header', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_header',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('founders_content', array(
+        'default' => __('Content', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_content', array(
+        'label' => __('Edit founders content', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_content',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('founders_year', array(
+        'default' => __('Year', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_year', array(
+        'label' => __('Edit founders year', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_year',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('founders_button_content', array(
+        'default' => __('Content', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_button_content', array(
+        'label' => __('Edit button content', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_button_content',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('founders_button_url', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_button_url', array(
+        'label' => __('Edit button url', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_button_url',
+        'type' => 'url',
+    ));
+
+    $wp_customize->add_setting('founders_link_content', array(
+        'default' => __('Link content', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_link_content', array(
+        'label' => __('Edit link content', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_link_content',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('founders_link_url', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+        'founders_link_url', array(
+        'label' => __('Edit link url', 'lets_rock'),
+        'section' => 'founders_section',
+        'settings' => 'founders_link_url',
+        'type' => 'url',
+    ));
+
+
+    $wp_customize->add_setting('founders_image', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'founders_image',
+        array(
+            'label'      => __( 'Upload a image', 'lets_rock' ),
+            'section'    => 'founders_section',
+            'settings'   => 'founders_image',
+
+        )
+    )
+);
 }
 
 add_action('customize_register', 'letsrock_customize_register');
 
 // Try to add my jQuery script for slider and popup
-
-function my_scripts_method() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js');
-    wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js');
-}
-
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );

@@ -8,7 +8,6 @@ jQuery(document).ready(function() {
                     .animate({opacity: 1, top: '50%'}, 1000)
             })
     })
-
     jQuery('#modal_close, #overlay').click( function(){
         jQuery('#modal_form')
             .animate({opacity: 0, top: '45%'}, 1000,

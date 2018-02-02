@@ -33,7 +33,7 @@ a.main-button:hover {
      display: inline-block;
 }
 
-.learn-more-button {
+a.learn-more-button {
      text-decoration: none;
      font-family: 'Droid Sans', sans-serif;
      font-size: 15px;
@@ -52,7 +52,7 @@ a.main-button:hover {
      opacity: 0.8;
 }
 
-.learn-more-button:hover {
+a.learn-more-button:hover {
      color: $main-font-color;
      transition: 0.5s;
      cursor: pointer;

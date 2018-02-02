@@ -15,9 +15,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title>Lets' Rock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="fonts/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="flexslider/flexslider.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
@@ -61,9 +58,6 @@
                                 </a>
                             </div>
                         </div>
-                    </li>
-                    <li>
-
                     </li>
                 </ul>
             </div>

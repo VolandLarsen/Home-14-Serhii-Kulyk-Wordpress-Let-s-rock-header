@@ -15,42 +15,31 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main"
+            <div class="founders">
+                <div class="container">
+                    <div class="founders-content">
+                        <div class="founders-heading">
+                            <h2 class="founders-head"><?php echo get_theme_mod('founders_header') ?></h2>
+                            <p class="founder-subhead">
+                                <?php echo get_theme_mod('founders_year') ?>
+                                <a href="<?php echo get_theme_mod('founders_link_url') ?>" class="founder-cantus">
+                                    <?php echo get_theme_mod('founders_link_content') ?>
+                                </a>
+                                <?php echo get_theme_mod('founders_content') ?>
+                            </p>
+                            <div class="learn-more-container">
+                                <a href="<?php echo get_theme_mod('founders_button_url') ?>" class="learn-more-button">
+                                    <?php echo get_theme_mod('founders_button_content') ?>
+                                </a>
+                            </div>
+                        </div>
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+                        <img src="<?php echo get_theme_mod('founders_image') ?>" class="founder-img" alt="Founder image">
+                    </div>
+                </div>
+            </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
-get_sidebar();
 get_footer();

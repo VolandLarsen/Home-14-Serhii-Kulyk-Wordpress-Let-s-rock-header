@@ -17,7 +17,11 @@
         ?>
     </div>
     <div class="copyright">
-        <?php echo get_theme_mod('footer_copy') ?>
+        <?php echo get_theme_mod('footer_copy_rights') ?>
+        <a href="<?php echo get_theme_mod('footer_link_url') ?>" class="cantus">
+            <?php echo get_theme_mod('footer_link_content') ?>
+        </a>
+         <?php echo get_theme_mod('footer_copy') ?>
     </div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
