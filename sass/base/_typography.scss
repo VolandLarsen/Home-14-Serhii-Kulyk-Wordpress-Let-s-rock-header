@@ -14,14 +14,14 @@
 //header-fonts
 
 .main-header, .head, .concert-name, .date-number, .date-month, .founders-head, .download-head {
-  font-family: $head-fomt;
+  font-family: $head-font;
 }
 
 .sub-header, .cantus, .subhead, .founder-cantus {
   font-family: $secodary-font;
 }
 
-.foot-link, .copyright, .info, .social, .nav-link, .founder-subhead, .download-subhead, .song-link {
+.foot-link, a#menu-footer-navigation, .copyright, .info, .social, a.custom-menu-class, a.custom-menu-class-social, .nav-link, .founder-subhead, .download-subhead, .song-link {
   font-family: $text-font;
 }
 

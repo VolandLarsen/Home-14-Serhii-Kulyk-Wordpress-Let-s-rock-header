@@ -140,7 +140,10 @@ function lets_rock_scripts()
 
     wp_enqueue_script("jquery");
 
-    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js');
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js');
+
+    wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
 }
 
 add_action('wp_enqueue_scripts', 'lets_rock_scripts');
@@ -186,12 +189,6 @@ function wpb_custom_new_menu()
 }
 
 add_action('init', 'wpb_custom_new_menu');
-
-add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
-function enqueue_font_awesome()
-{
-    wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
-}
 
 function letsrock_customize_register($wp_customize)
 {
@@ -337,7 +334,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'founders_year',
         'type' => 'text',
     ));
-
     $wp_customize->add_setting('founders_button_content', array(
         'default' => __('Content', 'lets_rock'),
         'transport' => 'refresh',
@@ -349,7 +345,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'founders_button_content',
         'type' => 'text',
     ));
-
     $wp_customize->add_setting('founders_button_url', array(
         'default' => __('url', 'lets_rock'),
         'transport' => 'refresh',
@@ -361,7 +356,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'founders_button_url',
         'type' => 'url',
     ));
-
     $wp_customize->add_setting('founders_link_content', array(
         'default' => __('Link content', 'lets_rock'),
         'transport' => 'refresh',
@@ -373,7 +367,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'founders_link_content',
         'type' => 'text',
     ));
-
     $wp_customize->add_setting('founders_link_url', array(
         'default' => __('url', 'lets_rock'),
         'transport' => 'refresh',
@@ -385,23 +378,21 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'founders_link_url',
         'type' => 'url',
     ));
-
-
     $wp_customize->add_setting('founders_image', array(
         'default' => __('', 'lets_rock'),
         'transport' => 'refresh',
     ));
     $wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'founders_image',
-        array(
-            'label'      => __( 'Upload a image', 'lets_rock' ),
-            'section'    => 'founders_section',
-            'settings'   => 'founders_image',
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'founders_image',
+            array(
+                'label' => __('Upload a image', 'lets_rock'),
+                'section' => 'founders_section',
+                'settings' => 'founders_image',
 
-        )
-    ));
+            )
+        ));
     $wp_customize->add_section('download_section', array(
         'title' => __('Download info', 'letsrock'),
     ));
@@ -428,7 +419,6 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'download_subhead',
         'type' => 'textarea',
     ));
-
     $wp_customize->add_setting('apple_image', array(
         'default' => __('', 'lets_rock'),
         'transport' => 'refresh',
@@ -438,9 +428,9 @@ function letsrock_customize_register($wp_customize)
             $wp_customize,
             'apple_image',
             array(
-                'label'      => __( 'Upload apple image', 'lets_rock' ),
-                'section'    => 'download_section',
-                'settings'   => 'apple_image',
+                'label' => __('Upload apple image', 'lets_rock'),
+                'section' => 'download_section',
+                'settings' => 'apple_image',
 
             )
         ));
@@ -453,12 +443,11 @@ function letsrock_customize_register($wp_customize)
             $wp_customize,
             'play_image',
             array(
-                'label'      => __( 'Upload play store image', 'lets_rock' ),
-                'section'    => 'download_section',
-                'settings'   => 'play_image',
+                'label' => __('Upload play store image', 'lets_rock'),
+                'section' => 'download_section',
+                'settings' => 'play_image',
             )
         ));
-
     $wp_customize->add_setting('back_image', array(
         'default' => __('', 'lets_rock'),
         'transport' => 'refresh',
@@ -468,15 +457,14 @@ function letsrock_customize_register($wp_customize)
             $wp_customize,
             'back_image',
             array(
-                'label'      => __( 'Upload background image', 'lets_rock' ),
-                'section'    => 'download_section',
-                'settings'   => 'back_image',
+                'label' => __('Upload background image', 'lets_rock'),
+                'section' => 'download_section',
+                'settings' => 'back_image',
             )
         ));
     $wp_customize->add_section('', array(
         'title' => __('Dropdown pages', 'letsrock'),
     ));
-
     $wp_customize->add_setting('dop_page', array(
         'default' => __('', 'lets_rock'),
         'transport' => 'refresh',
@@ -488,21 +476,19 @@ function letsrock_customize_register($wp_customize)
         'settings' => 'drop_page',
         'type' => 'dropdown-pages',
     ));
+    $wp_customize->add_section('dropdown_section', array(
+        'title' => __('Dropdown pages', 'lets_rock'),
+    ));
+    $wp_customize->add_setting('drop-page', array(
+        'default' => '',
+        'sanitize_callback' => 'absint'
+    ));
 
-
-    $wp_customize->add_section( 'dropdown_section' , array(
-        'title'      => __( 'Dropdown pages', 'lets_rock' ),
-    ) );
-        $wp_customize->add_setting( 'drop-page', array(
-            'default'           => '',
-            'sanitize_callback' => 'absint'
-        ) );
-
-        $wp_customize->add_control( 'drop-page', array(
-            'label'    => __( 'Select Page', 'lets_rock' ),
-            'section'  => 'dropdown_section',
-            'type'     => 'dropdown-pages'
-        ) );
+    $wp_customize->add_control('drop-page', array(
+        'label' => __('Select Page', 'lets_rock'),
+        'section' => 'dropdown_section',
+        'type' => 'dropdown-pages'
+    ));
 
     $wp_customize->add_section('popup_section', array(
         'title' => __('Popup editor', 'letsrock'),

@@ -45,11 +45,13 @@ a.learn-more-button {
      display: inline-block;
 }
 
-#menu-item-63 a:hover {
-     color: $main-font-color;
-     transition: 0.5s;
-     cursor: pointer;
-     opacity: 0.8;
+#menu-social li:last-child {
+     a:hover {
+          color: $main-font-color;
+          transition: 0.5s;
+          cursor: pointer;
+          opacity: 0.8;
+     }
 }
 
 a.learn-more-button:hover {

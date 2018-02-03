@@ -43,8 +43,9 @@
             </div>
         </header><!-- #masthead -->
         <div class="head-slider">
-            <!-- This section is dont show in right way if ti placed in header.
-            I try to fix it many times but it dont work. But if it placed outside header, looks as it should look,-->
+            <!-- This section is dont show in right way if it placed in header.
+            I try to fix it many times but it dont work. But if it placed outside header,
+            looks as it should look,-->
             <?php echo do_shortcode('[metaslider id="144"]'); ?>
             <div class="promo">
 
