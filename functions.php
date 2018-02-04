@@ -265,7 +265,7 @@ function letsrock_customize_register($wp_customize)
         'transport' => 'refresh',
     ));
     $wp_customize->add_section('s1header_section', array(
-        'title' => __('Slide one header', 'letsrock'),
+        'title' => __('Header on slider', 'letsrock'),
         'priority' => 32,
     ));
     $wp_customize->add_control(
@@ -344,17 +344,6 @@ function letsrock_customize_register($wp_customize)
         'section' => 'founders_section',
         'settings' => 'founders_button_content',
         'type' => 'text',
-    ));
-    $wp_customize->add_setting('founders_button_url', array(
-        'default' => __('url', 'lets_rock'),
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control(
-        'founders_button_url', array(
-        'label' => __('Edit button url', 'lets_rock'),
-        'section' => 'founders_section',
-        'settings' => 'founders_button_url',
-        'type' => 'url',
     ));
     $wp_customize->add_setting('founders_link_content', array(
         'default' => __('Link content', 'lets_rock'),

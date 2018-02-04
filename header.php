@@ -46,6 +46,8 @@
             <!-- This section is dont show in right way if it placed in header.
             I try to fix it many times but it dont work. But if it placed outside header,
             looks as it should look,-->
+            <!-- Here is a slider for this section. It will not work on other wordpress site
+             without installing plugin "MetaSlider". I don`t know how to instll wp-plugin in theme.-->
             <?php echo do_shortcode('[metaslider id="144"]'); ?>
             <div class="promo">
 
