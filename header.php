@@ -50,14 +50,13 @@
              without installing plugin "MetaSlider". I don`t know how to instll wp-plugin in theme.-->
             <?php echo do_shortcode('[metaslider id="144"]'); ?>
             <div class="promo">
-
                 <div class="main-heading">
                     <?php echo do_shortcode('[metaslider id="136"]'); ?>
                     <h1 class="main-header">
                         <?php echo get_theme_mod('slide1_header') ?>
                         <span class="sub-header">
-                                        <?php echo get_theme_mod('slide1_subheader') ?>
-                                    </span>
+                            <?php echo get_theme_mod('slide1_subheader') ?>
+                        </span>
                     </h1>
                     <a class="main-button" href="<?php echo get_theme_mod('slide1_button_url') ?>">
                         <?php echo get_theme_mod('slide1_button_content') ?>
@@ -65,6 +64,5 @@
                 </div>
             </div>
         </div>
-
 
         <div id="content" class="site-content">
